@@ -35,6 +35,7 @@ class SearchBar extends Component {
           className="form-control"
           value={this.state.term}
           onChange={this.onInputChange}
+          id="locationTextField"
         />
         <span className="input-group-btn">
           <button type="submit" className="btn btn-secondary">Submit</button>
@@ -42,6 +43,11 @@ class SearchBar extends Component {
       </form>
     );
   }
+}
+
+function init() {
+    var input = document.getElementById('locationTextField');
+    var autocomplete = new window.google.maps.places.Autocomplete(input);
 }
 
 function mapDispatchToProps(dispatch) {
